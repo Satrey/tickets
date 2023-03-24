@@ -2,6 +2,9 @@
 
 {% block left-aside %}
     <div class="card shadow ms-4 aside">
+        <div class="aside-header">
+            <strong>Темы тестирования</strong>
+        </div>
         {% for theme in context.themes %}
             <a class="theme-link" href="{{ theme.slug }}">{{ theme }}</a>
         {% endfor %}
@@ -9,6 +12,9 @@
 {% endblock %}
 {% block right-aside %}
     <div class="card shadow me-4 aside">
+        <div class="aside-header">
+            <strong>Темы тестирования</strong>
+        </div>
         {% for theme in context.themes %}
             <a class="theme-link" href="">{{ theme }}</a>
         {% endfor %}
