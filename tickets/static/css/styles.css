@@ -1,0 +1,73 @@
+body {
+    padding-top: 100px;
+}
+
+h1 {
+    color: red;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding-left: 20px;
+}
+
+li:hover {
+    background-color: rgba(128, 128, 128, 0.233);
+    color: rgb(19, 16, 16);
+}
+
+.ticket-title {
+    background-color: rgba(0, 0, 255, 0.808);
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-bottom: 1px solid black;
+}
+
+.question-card {
+    margin-bottom: 50px;
+}
+
+.brand-text {
+    text-shadow: 2px 2px 5px rgba(61, 61, 61, 0.712);
+    font-size: x-large;
+    font-weight: 400;
+}
+
+.aside {
+    position: sticky;
+    top: 100px;
+}
+
+.left-aside {
+    padding: 0;
+    margin: 0;
+}
+
+.right-aside {
+    padding: 0;
+    margin: 0;
+}
+
+.theme-link {
+    text-decoration: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+}
+
+.theme-link:hover {
+    background-color: rgba(128, 128, 128, 0.233);
+}
+
+/* .test-container {
+    padding-top: 160px;
+} */

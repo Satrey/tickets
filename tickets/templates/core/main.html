@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block left-aside %}
+    <div class="card shadow ms-4 aside">
+        {% for theme in context.themes %}
+            <a class="theme-link" href="{{ theme.slug }}">{{ theme }}</a>
+        {% endfor %}
+    </div>
+{% endblock %}
+{% block right-aside %}
+    <div class="card shadow me-4 aside">
+        {% for theme in context.themes %}
+            <a class="theme-link" href="">{{ theme }}</a>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+
+{% block content %}
+{% endblock %}
