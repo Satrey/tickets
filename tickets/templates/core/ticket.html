@@ -21,7 +21,11 @@
         <ul class="list-group p-0 m-0">
             {% for question in context.questions %}
             <div class="card question-card shadow">
-                <div class="ticket-title">
+                <div class="ticket-title"
+                     data-bs-toggle="tooltip"
+                     data-bs-placement="bottom"
+                     title='{{ question.description }}'
+                >
                     <h6>{{ question.text }}</h6>
                     {%if question.multiselect %}
                         <p class="text-warning pb-0 mb-0">Несколько правильных вариантов</p>
