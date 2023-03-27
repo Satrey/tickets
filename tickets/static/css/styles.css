@@ -89,3 +89,11 @@ li:hover {
     font-size: large;
     font-weight: 400;
 }
+
+.aside-bottom {
+    background-color: rgba(0, 0, 255, 0.808);
+    color: white;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    height: 50px;
+}
