@@ -68,6 +68,13 @@ li:hover {
     background-color: rgba(128, 128, 128, 0.233);
 }
 
+.aside-title {
+    background-color: rgba(0, 0, 255, 0.808);
+    color: white;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+}
+
 /* .test-container {
     padding-top: 160px;
 } */
