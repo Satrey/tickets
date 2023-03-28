@@ -38,11 +38,13 @@
                                 {{ answers.text }}
                                 {% if not question.multiselect %}
                                     <p class="pe-4">
-                                         <input class="form-check-input" type="radio" name="{{ question.id }}" value="answers.correct">
+                                         <input class="form-check-input" type="radio" name="{{ question.id }}"
+                                         value="answers.correct" {% if answers.correct %}checked{% endif %}>
                                     </p>
                                 {% else %}
                                     <p class="pe-4">
-                                         <input class="form-check-input" type="checkbox" name="{{ question.id }}" value="answers.correct">
+                                         <input class="form-check-input" type="checkbox" name="{{ question.id }}" 
+                                         value="answers.correct" {% if answers.correct %}checked{% endif %}>
                                     </p>
                                 {% endif %}
                             </li>
