@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views import generic
+from django.http import HttpResponse
 from .models import Theme, Ticket, Question, Answer
 
 
@@ -15,7 +16,14 @@ def ticket(request, slug, number):
     questions = Question.objects.filter(theme__slug=slug).filter(ticket__number=number)
     answers = Answer.objects.filter(ques__ticket__number=number)
     data = {'themes': themes, 'tickets': tickets, 'questions': questions, 'answers': answers}
-    return render(request, 'core/ticket.html', {'context': data})
+
+    if request.method == 'POST':
+        correct_choices = {}
+        user_choices = request.POST.getlist(questions)
+        print(user_choices)
+        return HttpResponse(request)
+    else:
+        return render(request, 'core/ticket.html', {'context': data})
 
 
 def theme_choice(request, slug):

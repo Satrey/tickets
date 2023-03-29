@@ -19,6 +19,8 @@
 <div class="container">
     <div class="row">
         <ul class="list-group p-0 m-0">
+            <form action="" method="post">
+                {% csrf_token %}
             {% for question in context.questions %}
             <div class="card question-card shadow">
                 <div class="ticket-title"
@@ -31,29 +33,34 @@
                         <p class="text-warning pb-0 mb-0">Несколько правильных вариантов</p>
                     {% endif %}
                 </div>
+
                 <ul class="list">
                     {% for answers in context.answers %}
-                        {% if question.id ==  answers.ques.id %}
+                        {% if question.id == answers.ques.id %}
                             <li class="pt-2 d-flex justify-content-between">
                                 {{ answers.text }}
                                 {% if not question.multiselect %}
                                     <p class="pe-4">
-                                         <input class="form-check-input" type="radio" name="{{ question.id }}"
-                                         value="answers.correct" {% if answers.correct %}checked{% endif %}>
+                                         <input class="form-check-input" type="radio" name="{{ question.pk }}"
+                                         value="{{ answers.correct }}" {% if answers.correct %}checked{% endif %}>
                                     </p>
                                 {% else %}
                                     <p class="pe-4">
-                                         <input class="form-check-input" type="checkbox" name="{{ question.id }}" 
-                                         value="answers.correct" {% if answers.correct %}checked{% endif %}>
+                                         <input class="form-check-input" type="checkbox" name="{{ question.pk }}"
+                                         value="{{ answers.correct }}" {% if answers.correct %}checked{% endif %}>
                                     </p>
                                 {% endif %}
                             </li>
                         {% endif %}
                     {% endfor %}
+
                 </ul>
             </div>
-
             {% endfor %}
+                <div>
+                    <input class="btn btn-primary mb-4" type="submit" value="Завершить тестирование">
+                </div>
+            </form>
         </ul>
     </div>
 </div>
