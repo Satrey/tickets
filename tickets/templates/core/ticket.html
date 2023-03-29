@@ -29,25 +29,33 @@
                      title='{{ question.description }}'
                 >
                     <h6>{{ question.text }}</h6>
+
                     {%if question.multiselect %}
                         <p class="text-warning pb-0 mb-0">Несколько правильных вариантов</p>
                     {% endif %}
+                
                 </div>
 
                 <ul class="list">
-                    {% for answers in context.answers %}
-                        {% if question.id == answers.ques.id %}
+                    {% for answer in context.answers %}
+                        {% if question.id == answer.ques.id %}
                             <li class="pt-2 d-flex justify-content-between">
-                                {{ answers.text }}
+                                {{ answer.text }}
                                 {% if not question.multiselect %}
                                     <p class="pe-4">
-                                         <input class="form-check-input" type="radio" name="{{ question.pk }}"
-                                         value="{{ answers.correct }}" {% if answers.correct %}checked{% endif %}>
+                                         <input class="form-check-input" 
+                                         type="radio" 
+                                         name="{{ question.pk }}"
+                                         value="{{ answer.correct }}" 
+                                         {% if answer.correct %}checked{% endif %}>
                                     </p>
                                 {% else %}
                                     <p class="pe-4">
-                                         <input class="form-check-input" type="checkbox" name="{{ question.pk }}"
-                                         value="{{ answers.correct }}" {% if answers.correct %}checked{% endif %}>
+                                         <input class="form-check-input" 
+                                         type="checkbox" 
+                                         name="{{ question.pk }}"
+                                         value="{{ answer.correct }}" 
+                                         {% if answer.correct %}checked{% endif %}>
                                     </p>
                                 {% endif %}
                             </li>

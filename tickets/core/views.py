@@ -18,10 +18,7 @@ def ticket(request, slug, number):
     data = {'themes': themes, 'tickets': tickets, 'questions': questions, 'answers': answers}
 
     if request.method == 'POST':
-        correct_choices = {}
-        user_choices = request.POST.getlist(questions)
-        print(user_choices)
-        return HttpResponse(request)
+        return render(request, 'core/ticket.html', {'context': data})
     else:
         return render(request, 'core/ticket.html', {'context': data})
 
