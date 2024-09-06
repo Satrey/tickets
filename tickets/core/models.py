@@ -33,7 +33,7 @@ class Ticket(models.Model):
 class Question(models.Model):
     theme = models.ForeignKey('Theme', on_delete=models.CASCADE, null=True, blank=True, verbose_name='Тема вопроса')
     ticket = models.ForeignKey('Ticket', on_delete=models.CASCADE, null=True, blank=True, verbose_name='Билет')
-    text = models.TextField(max_length=250, verbose_name='Вопрос')
+    text = models.TextField(max_length=500, verbose_name='Вопрос')
     description = models.TextField(max_length=1000, null=True, blank=True, verbose_name='Пояснение к вопросу')
     multiselect = models.BooleanField(default=False, verbose_name='Несколько вариантов')
 
@@ -46,7 +46,7 @@ class Question(models.Model):
 
 
 class Answer(models.Model):
-    text = models.TextField(max_length=250, db_index=True)
+    text = models.TextField(max_length=500, db_index=True)
     ques = models.ForeignKey(Question, on_delete=models.CASCADE, related_name='answers')
     correct = models.BooleanField(default=False)
 
